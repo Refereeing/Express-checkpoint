@@ -28,13 +28,17 @@ app.get("/", (req, res) => {
   res.render("HomePage");
 });
 
-app.get("/contact", (req, res) => {
-  res.render("ContactUs");
-});
 
-app.get("/services", (req, res) => {
-  res.render("Services");
-});
+const userRouter =require ("./routes/route");
+app.use ("/", userRouter)
+
+// app.get("/contact", (req, res) => {
+//   res.render("ContactUs");
+// });
+
+// app.get("/services", (req, res) => {
+//   res.render("Services");
+// });
 
 const PORT = process.env.PORT || 5000
 
